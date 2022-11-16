@@ -1,4 +1,4 @@
-# Logest Common Prefix 
+# Longest Common Prefix 
 
 <p style='font-size: 20px'>Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string "".</p>
 문자열들의 배열을 입력받았을 때, 문자열들 간의 공통된 접두어가 있다면 반환하고, 없다면 빈 문자열을 반환합니다.
