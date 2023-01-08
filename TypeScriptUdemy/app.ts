@@ -36,7 +36,7 @@ const person = {
 
 // person.role = [0, "hello"];
 
-let favoriteActivities: string[];
+let favoriteActivities: any[];
 favoriteActivities = ["Sports", "Reading"];
 
 console.log(person.name);
