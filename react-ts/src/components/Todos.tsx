@@ -1,10 +1,16 @@
-function Todos() {
+type Props = {
+  children?: React.ReactNode;
+  itmes: string[];
+};
+
+const Todos: React.FC<React.PropsWithChildren<Props>> = (props) => {
   return (
     <ul>
-      <li>Learn React</li>
-      <li>Learn TypeScript</li>
+      {props.itmes.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
     </ul>
   );
-}
+};
 
 export default Todos;
