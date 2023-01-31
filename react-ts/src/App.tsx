@@ -13,10 +13,16 @@ function App() {
     });
   };
 
+  const removeTodoHandler = (todoId: string) => {
+    setTodos((prevTodos) => {
+      return prevTodos.filter((todo) => todo.id !== todoId);
+    });
+  };
+
   return (
     <div>
       <NewTodo onAddTodo={addTodoHandler} />
-      <Todos itmes={todos} />
+      <Todos itmes={todos} onRemoveTodo={removeTodoHandler} />
     </div>
   );
 }
