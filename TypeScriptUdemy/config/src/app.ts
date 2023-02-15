@@ -14,8 +14,18 @@
 
 // generateError("An error occured!", 500);
 
-const button = document.querySelector("button")!;
+const button = document.querySelector("button");
 
-button.addEventListener("click", () => {
-  console.log("Clicked!");
-});
+function clickHandler(message: string) {
+  console.log("Clicked! ", message);
+}
+
+if (button) {
+  button.addEventListener("click", clickHandler.bind(null, "hi"));
+}
+
+function sendAnalytics(data: string) {
+  console.log(data);
+}
+
+sendAnalytics("The data");
