@@ -38,6 +38,7 @@ class AccountingDepartment extends Department {
     super(id, "Accounting");
   }
 
+  // you can override class's method 재정의할 수 있다.
   addEmployee(name: string): void {
     if (name === "Max") {
       return;
