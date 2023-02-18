@@ -1,5 +1,6 @@
 // Code goes here!
 
+// 기본 클래스
 class Department {
   // private id: string;
   // private name: string;
@@ -24,15 +25,42 @@ class Department {
   }
 }
 
-const accounting = new Department("d1", "Accounting");
+class ITDepartment extends Department {
+  admins: string[];
+  constructor(id: string, admins: string[]) {
+    super(id, "IT");
+    this.admins = admins;
+  }
+}
 
-accounting.addEmployee("Max");
-accounting.addEmployee("Manu");
+class AccountingDepartment extends Department {
+  constructor(id: string, private reports: string[]) {
+    super(id, "Accounting");
+  }
+
+  addReport(text: string) {
+    this.reports.push(text);
+  }
+
+  printReports() {
+    console.log(this.reports);
+  }
+}
+
+const it = new ITDepartment("d1", ["Max"]);
+
+it.addEmployee("Max");
+it.addEmployee("Manu");
 
 // accounting.employees[2] = "Sierra"; // 직접 추가
-console.log(accounting);
-accounting.describe();
-accounting.printEmployeeInformation();
+console.log(it);
+it.describe();
+it.printEmployeeInformation();
 
 // const accountingCopy = { name: "sierra", describe: accounting.describe };
 // accountingCopy.describe();
+
+const accounting = new AccountingDepartment("d2", []);
+
+accounting.addReport("Something went wrong");
+accounting.printReports();
