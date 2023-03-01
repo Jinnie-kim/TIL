@@ -39,11 +39,17 @@ result.split(" ");
 const fetchedUserData = {
   id: "u1",
   name: "Max",
-  // job: { title: "CEO", description: "My own company" },
+  job: { title: "CEO", description: "My own company" },
 };
 
 // console.log(fetchedUserData.job && fetchedUserData.job.title);
 console.log(fetchedUserData?.job?.title);
+
+const userInput = "";
+
+const storeData = userInput ?? "DEFAULT";
+
+console.log(storeData);
 
 // type UnknownEmployee = Employee | Admin;
 
