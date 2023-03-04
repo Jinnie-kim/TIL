@@ -1,6 +1,7 @@
+// Project State Management
+// only one state management object for project with this singleton constructor now
+
 namespace App {
-  // Project State Management
-  // only one state management object for project with this singleton constructor now
   type Listener<T> = (items: T[]) => void;
 
   class State<T> {
