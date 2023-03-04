@@ -1,6 +1,6 @@
 // ProjectList Class
 
-import { Component } from './base-component.js';
+import Component from './base-component.js';
 import { Project, ProjectStatus } from '../models/project.js';
 import { DragTarget } from '../models/drag-drop.js';
 import { autobind } from '../decorators/autobind.js';
