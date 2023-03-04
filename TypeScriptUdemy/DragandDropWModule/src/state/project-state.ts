@@ -1,7 +1,7 @@
 // Project State Management
 // only one state management object for project with this singleton constructor now
 
-import { Project, ProjectStatus } from '../models/project.js';
+import { Project, ProjectStatus } from '../models/project';
 
 type Listener<T> = (items: T[]) => void;
 
