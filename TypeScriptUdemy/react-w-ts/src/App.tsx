@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Todo } from './todo.model';
 import NewTodo from './components/NewTodo';
 import TodoList from './components/TodoList';
 
 function App() {
-  const todos = [{ id: 't1', text: 'Finish the course' }];
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   const todoAddHandler = (newTodo: string) => {
-    todos.push({ id: 't2', text: newTodo });
+    setTodos([{ id: Math.random().toString(), text: newTodo }]);
   };
-
-  console.log(todos);
 
   return (
     <div className="App">
