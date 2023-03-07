@@ -4,8 +4,8 @@ import classes from './Counter.module.css';
 
 const Counter = () => {
   const dispatch = useDispatch();
-  const counter = useSelector((state) => state.counter); // useSelector를 사용하면 자동으로 react-redux에 구독을 설정한다.
-  const showCounter = useSelector((state) => state.showCounter);
+  const counter = useSelector((state) => state.counter.counter); // useSelector를 사용하면 자동으로 react-redux에 구독을 설정한다.
+  const showCounter = useSelector((state) => state.counter.showCounter);
 
   const toggleCounterHandler = () => {
     dispatch(counterActions.toggleCounter());
