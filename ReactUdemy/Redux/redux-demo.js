@@ -1,9 +1,18 @@
 const redux = require('redux');
 
 const counterReducer = (state = { counter: 0 }, action) => {
-  return {
-    counter: state.counter + 1,
-  };
+  if (action.type === 'increment') {
+    return {
+      counter: state.counter + 1,
+    };
+  }
+  if (action.type === 'decrement') {
+    return {
+      counter: state.counter - 1,
+    };
+  }
+
+  return state;
 };
 
 const store = redux.createStore(counterReducer); // initialize but that doesn't trigger subscribtion
@@ -16,3 +25,4 @@ const counterSubscriber = () => {
 store.subscribe(counterSubscriber); // redux가 실행할거임
 
 store.dispatch({ type: 'increment' });
+store.dispatch({ type: 'decrement' });
