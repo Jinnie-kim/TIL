@@ -14,3 +14,5 @@ const counterSubscriber = () => {
 };
 
 store.subscribe(counterSubscriber); // redux가 실행할거임
+
+store.dispatch({ type: 'increment' });
