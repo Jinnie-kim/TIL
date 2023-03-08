@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialCartShowState = { showCart: false };
 
-const cartSlice = createSlice({
+const showCartSlice = createSlice({
   name: 'showCart',
   initialState: initialCartShowState,
   reducers: {
@@ -13,8 +13,8 @@ const cartSlice = createSlice({
   },
 });
 
-export const showCartActions = cartSlice.actions;
+export const showCartActions = showCartSlice.actions;
 
-const store = configureStore({ reducer: cartSlice.reducer });
+const store = configureStore({ reducer: showCartSlice.reducer });
 
 export default store;
