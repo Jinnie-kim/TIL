@@ -10,13 +10,19 @@
   function move(command: Command) {
     switch (command) {
       case 'up':
-        return (position.y += 1);
+        position.y += 1;
+        break;
       case 'down':
-        return (position.y -= 1);
+        position.y -= 1;
+        break;
       case 'left':
-        return (position.x -= 1);
+        position.x -= 1;
+        break;
       case 'right':
-        return (position.x += 1);
+        position.x += 1;
+        break;
+      default:
+        throw new Error(`unknown direction ${command}`);
     }
   }
 
