@@ -20,10 +20,27 @@
 
   type ResourceLoadState = LoadingState | SuccessState | FailState;
 
+  // function printLoginState(state: ResourceLoadState) {
+  //   if (state.state === 'loading') return console.log(`👀 ${state.state}...`);
+  //   if (state.state === 'success') return console.log(`😃 ${state.response.body}`);
+  //   if (state.state === 'fail') return console.log(`😱 ${state.reason}`);
+  // }
+
+  // switch 문으로 변경
   function printLoginState(state: ResourceLoadState) {
-    if (state.state === 'loading') return console.log(`👀 ${state.state}...`);
-    if (state.state === 'success') return console.log(`😃 ${state.response.body}`);
-    if (state.state === 'fail') return console.log(`😱 ${state.reason}`);
+    switch (state.state) {
+      case 'loading':
+        console.log('loading...');
+        break;
+      case 'success':
+        console.log(`😃 ${state.response.body}`);
+        break;
+      case 'fail':
+        console.log(`😱 ${state.reason}`);
+        break;
+      default:
+        throw new Error(`unknow state: ${state}`);
+    }
   }
 
   printLoginState({ state: 'loading' }); // 👀 loading...
